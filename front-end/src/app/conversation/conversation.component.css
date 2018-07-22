@@ -1,0 +1,150 @@
+html, body {
+    width: 100%; height: 100%;
+    margin: 0px; padding: 0px;
+    background-color: #E0E0E0;
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+  }
+  #app {
+    /* Size */
+    width: 500px; height: 500px;
+    /* Aboslute Center */
+    position: absolute;
+    left: 50%; top: 50%;
+    margin-left: -250px; margin-top: -250px;
+    /* Box Shadow */
+    box-shadow: 0px 0px 10px 0px #BDBDBD;
+    /* Define Layout */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 380px 70px;
+  }
+  
+  header {
+    padding: 0px 10px;
+    /* Take 12 grids */
+    grid-column: span 12;
+    /* Coloring */
+    background-color: #00BCD4;
+    color: #FFFFFF;
+    /* Flexbox */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  header * {
+    line-height: 50px;
+  }
+  #logo {
+    flex-grow: 1;
+    font-size: 14pt;
+    font-weight: 700;
+    padding: 0px 10px;
+  }
+  #buttons {
+    flex-grow: 1;
+    text-align: right;
+  }
+  #buttons > i {
+    width: 50px;
+    text-align: center;
+    /* Because Font-Awesome has set line-height */
+    line-height: inherit;
+  }
+  header .clickable:hover {
+    background-color: #4DD0E1;
+    cursor: pointer;
+  }
+  
+  aside {
+    grid-column: span 4;
+    background-color: #FFFFFF;
+  }
+  aside .conversation-item {
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 'icon title' 'icon msg';
+    grid-template-columns: 50px auto;
+    grid-gap: 10px;
+  }
+  aside .conversation-item:hover {
+    background-color: #E0E0E0;
+    cursor: pointer;
+  }
+  aside .conversation-item .c-icon {
+    grid-area: icon;
+    width: 50px;
+    height: 50px;
+    background-color: #F5F5F5;
+    border-radius: 25px;
+  }
+  aside .conversation-item .c-title {
+    grid-area: title;
+    font-weight: bold;
+  }
+  aside .conversation-item .c-msg {
+    grid-area: msg;
+    font-size: smaller;
+  }
+  
+  
+  main {
+    grid-column: span 8;
+    background-color: #F5F5F5;
+  }
+  main .bubble {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #E0F7FA;
+    border-radius: 5px;
+  }
+  main .bubble:hover {
+    background-color: #B2EBF2;
+    cursor: pointer;
+  }
+  main .bubble.right {
+    float: right;
+  }
+  main .bubble .b-time {
+    text-align: right;
+    font-style: italic;
+    font-size: smaller;
+  }
+  
+  footer {
+    grid-column: span 12;
+    /* Coloring */
+    background-color: #EEEEEE;
+    /**/
+    padding: 10px;
+  }
+  footer #input-container {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 10px 10px;
+  }
+  #input-container > * {
+    height: 100%;
+    border: none;
+    margin: 0px;
+  }
+  #input-container > *:focus {
+    outline: none;
+  }
+  #input-container > input {
+    padding: 0px 10px;
+    flex: 6;
+  }
+  #input-container > button {
+    flex: 1;
+    background-color: #E0E0E0;
+  }
+  #input-container > button:hover {
+    background-color: #BDBDBD;
+    cursor: pointer;
+  }
